@@ -1,0 +1,36 @@
+ALGORITHM sum of distict
+VAR
+    set1 : ARRAY_OF INTEGER[5];
+    set2 : ARRAY_OF INTEGER[5];
+    sum1:INTEGER:=0;
+    sum2:INTEGER:=0;
+    verif1:BOOLEAN:=False;
+    verif2:BOOLEAN:=false;
+BEGIN
+    set1:={2,5,6,9,8};
+    set2:={4,5,6,9,7};
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
+        FOR j FROM 0 TO set2.length-1 STEP 1  DO
+        IF (set1[i]== set2[j]) THEN
+            sum1:=sum1+set1[i];
+            verif1:=true;
+        END_IF
+
+    END_for
+    IF (verif1==false) THEN
+        sum=sum+set1[i];
+    END_IF
+    END_for
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
+        FOR i FROM 0 TO set2.length-1 STEP 1  DO
+            IF (set2[i]==set1[i]) THEN
+                verif2:=true;
+            END_IF
+        END_FOR
+        IF (verif2==false) THEN
+            sum2=sum2+set2[i];
+        END_IF
+    END_FOR
+    write(sum1);
+    write(sum2);
+END
